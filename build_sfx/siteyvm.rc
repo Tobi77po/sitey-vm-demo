@@ -1,0 +1,28 @@
+#include <winuser.h>
+
+1 24 "siteyvm.manifest"
+
+1 ICON "icon.ico"
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 1,0,0,0
+PRODUCTVERSION 1,0,0,0
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "SITEY-VM Kurulum"
+            VALUE "FileVersion", "1.0.0"
+            VALUE "InternalName", "SiteyVM_Setup"
+            VALUE "LegalCopyright", "Copyright 2025-2026 SITEY-VM"
+            VALUE "OriginalFilename", "SiteyVM_Setup.exe"
+            VALUE "ProductName", "SITEY-VM"
+            VALUE "ProductVersion", "1.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 0x04B0
+    END
+END

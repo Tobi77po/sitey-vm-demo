@@ -1,0 +1,76 @@
+
+═══════════════════════════════════════════════════════════════
+  SİTEY-VM Demo v1.0.0
+  Kurumsal Zafiyet Yönetim Platformu
+═══════════════════════════════════════════════════════════════
+
+HIZLI BAŞLANGIÇ
+─────────────────
+  1. SiteyVM_Setup_v1.0.0.exe dosyasına çift tıklayın
+  2. "Devam" diyerek kurulumu onaylayın
+  3. İlk açılışta admin şifrenizi belirleyin (GUI penceresi)
+  4. Bağımlılıklar otomatik kurulur (internet gerekli)
+  5. Uygulama başlar, tarayıcınız açılır
+
+TEK DOSYA — HER ŞEY İÇİNDE
+─────────────────────────────
+  SiteyVM_Setup_v1.0.0.exe tek bir dosyadır ve içinde:
+  • Python 3.11.7 Embedded (taşınabilir)
+  • FastAPI backend sunucusu
+  • React web arayüzü
+  • Türkçe PDF rapor fontları
+  • Kurulum sihirbazı
+  • Otomatik bağımlılık yönetimi
+
+  İlk çalıştırmada dosyalar şuraya çıkarılır:
+    %LOCALAPPDATA%\SiteyVM\
+
+ERİŞİM BİLGİLERİ
+───────────────────
+  Yerel Erişim  :  http://localhost:5000
+  Ağ Erişimi    :  http://<MAKINENIN_IP>:5000
+
+  Kullanıcı     :  admin
+  Şifre         :  (kurulumda belirlediğiniz şifre)
+
+KURULUM SONRASI ÇALIŞTIRMA
+────────────────────────────
+  İlk kurulumdan sonra SiteyVM_Setup_v1.0.0.exe'ye
+  tekrar çift tıkladığınızda doğrudan başlar.
+  (Tekrar kurulum yapmaz, mevcut kurulumu kullanır)
+
+GÜVENLİK
+──────────
+  Bu sürüm 3 aşamalı penetrasyon testinden geçmiştir:
+  • Faz 1: Teknik zafiyet testi (9 bulgu düzeltildi)
+  • Faz 2: İş mantığı testi (12+ bulgu düzeltildi)
+  • Faz 3: İleri seviye güvenlik testi (97/99 test geçti)
+
+ŞİFRE POLİTİKASI
+───────────────────
+  Admin şifresi şu kurallara uymalıdır:
+  • En az 8 karakter
+  • En az 1 büyük harf (A-Z)
+  • En az 1 küçük harf (a-z)
+  • En az 1 rakam (0-9)
+  • En az 1 özel karakter (!@#$%... vb.)
+
+SİSTEM GEREKSİNİMLERİ
+────────────────────────
+  • Windows 10/11 (64-bit)
+  • PowerShell 5.0+ (Windows 10 varsayılan)
+  • İnternet bağlantısı (sadece ilk kurulumda)
+  • ~200 MB disk alanı (bağımlılıklar dahil)
+  • Tarayıcı: Chrome, Edge, Firefox (güncel)
+
+VERİ DEPOLAMA
+───────────────
+  Tüm veriler: %LOCALAPPDATA%\SiteyVM\
+
+KALDIRMA
+──────────
+  %LOCALAPPDATA%\SiteyVM\ klasörünü silin — kayıt defteri
+  girişi yoktur.
+
+  © 2025 SİTEY Bilişim — www.sitey.com.tr
+

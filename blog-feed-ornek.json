@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "updated": "2026-02-14T12:00:00Z",
+  "posts": [
+    {
+      "id": "sitey-vm-tanitim",
+      "title": "SİTEY-VM: Türkiye'nin En Gelişmiş Zafiyet Yönetim Platformu",
+      "summary": "16+ güvenlik aracını tek platformda birleştiren SİTEY-VM ile tanışın. Nessus, OpenVAS, Burp Suite, Acunetix ve daha fazlası tek çatı altında.",
+      "url": "https://siteyvm.com",
+      "date": "2025-12-01T00:00:00Z",
+      "category": "Duyuru",
+      "image": "https://siteyvm.com/images/logo.png"
+    },
+    {
+      "id": "kurumsal-surum-2026",
+      "title": "Kurumsal Sürüm 2026 Yeni Özellikleri",
+      "summary": "AI Güvenlik Asistanı, Gelişmiş Raporlama, Agent Yönetimi, Atak Yüzeyi Haritalama ve daha fazlası kurumsal sürümde. Detaylar için web sitemizi ziyaret edin.",
+      "url": "https://siteyvm.com/#features",
+      "date": "2026-01-15T00:00:00Z",
+      "category": "Ürün",
+      "image": null
+    },
+    {
+      "id": "pentest-hizmetleri",
+      "title": "Sızma Testi ve Siber Güvenlik Hizmetlerimiz",
+      "summary": "Red Team, Blue Team, Purple Team, Pentest, DDoS Testi, Sosyal Mühendislik, Bulut Güvenliği ve daha fazlası. Profesyonel güvenlik hizmetleri için bizimle iletişime geçin.",
+      "url": "https://siteyvm.com/services.html",
+      "date": "2026-02-01T00:00:00Z",
+      "category": "Hizmetler",
+      "image": null
+    }
+  ]
+}

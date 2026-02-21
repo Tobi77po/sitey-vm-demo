@@ -1,0 +1,18 @@
+SİTEY-VM Demo Sürümü - Lisans Sözleşmesi
+═══════════════════════════════════════════
+
+Telif Hakkı © 2025 SİTEY Bilişim. Tüm hakları saklıdır.
+
+Bu yazılım SİTEY Bilişim tarafından geliştirilmiştir ve Demo 
+(Değerlendirme) amacıyla sunulmaktadır.
+
+KULLANIM KOŞULLARI:
+  1. Bu demo sürümü yalnızca değerlendirme amacıyla kullanılabilir.
+  2. Ticari kullanım için kurumsal lisans gereklidir.
+  3. Yazılımın kaynak kodları, tersine mühendislik, dağıtımı yasaktır.
+  4. Herhangi bir garanti verilmemektedir.
+
+Kurumsal lisans ve tam sürüm için:
+  Web:   https://www.siteyvm.com
+  E-posta: satis@siteyvm.com
+

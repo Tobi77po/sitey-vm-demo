@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": "welcome-sitey-vm",
+      "title": "SİTEY-VM Zafiyet Yönetim Platformu",
+      "summary": "Türkiye'nin en gelişmiş zafiyet yönetim sistemi ile tanışın. 16+ güvenlik aracını tek platformda birleştiren modern çözüm.",
+      "url": "https://siteyvm.com",
+      "date": "2025-12-01T00:00:00Z",
+      "category": "Duyuru",
+      "image": null
+    },
+    {
+      "id": "enterprise-features-2026",
+      "title": "Kurumsal Sürüm Yeni Özellikleri",
+      "summary": "AI Güvenlik Asistanı, Gelişmiş Raporlama, Agent Yönetimi ve daha fazlası kurumsal sürümde. Detaylar için web sitemizi ziyaret edin.",
+      "url": "https://siteyvm.com/#features",
+      "date": "2026-01-15T00:00:00Z",
+      "category": "Ürün",
+      "image": null
+    },
+    {
+      "id": "pentest-services",
+      "title": "Sızma Testi ve Güvenlik Hizmetlerimiz",
+      "summary": "Red Team, Blue Team, Purple Team, Pentest, DDoS Testi, Sosyal Mühendislik ve daha fazlası. Profesyonel güvenlik hizmetleri için bizimle iletişime geçin.",
+      "url": "https://siteyvm.com/services.html",
+      "date": "2026-02-01T00:00:00Z",
+      "category": "Hizmetler",
+      "image": null
+    }
+  ],
+  "last_check": 1771668958.5437183,
+  "etag": null
+}
