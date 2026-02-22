@@ -1713,7 +1713,7 @@ def _fetch_blog_feed():
 
         req = urllib.request.Request(
             BLOG_FEED_URL,
-            headers={"User-Agent": "SİTEY-VM Demo/1.0"}
+            headers={"User-Agent": "SITEY-VM Demo/1.0"}
         )
         if _blog_cache.get("etag"):
             req.add_header("If-None-Match", _blog_cache["etag"])
