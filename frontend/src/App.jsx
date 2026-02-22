@@ -35,22 +35,22 @@ function App() {
         <Route path="/manual-vuln-add" element={<ManualVulnAdd />} />
         <Route path="/openvas-import" element={<OpenVASImport />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/scantools" element={<EnterprisePage feature="Tarama Araclari Yonetimi" />} />
-        <Route path="/agents" element={<EnterprisePage feature="Agent Yönetimi" />} />
-        <Route path="/users" element={<EnterprisePage feature="Kullanıcı Yönetimi" />} />
-        <Route path="/scans" element={<EnterprisePage feature="Tarama Sonuçları İçe Aktarma" />} />
-        <Route path="/asm" element={<EnterprisePage feature="Atak Yüzey Yönetimi (ASM)" />} />
-        <Route path="/group-management" element={<EnterprisePage feature="Varlık Grup Yönetimi" />} />
-        <Route path="/team-workflow" element={<EnterprisePage feature="Takım İş Akışı" />} />
-        <Route path="/task-management" element={<EnterprisePage feature="Görev Yönetimi" />} />
-        <Route path="/process-management" element={<EnterprisePage feature="Süreç Yönetimi" />} />
-        <Route path="/integrations" element={<EnterprisePage feature="Entegrasyonlar" />} />
-        <Route path="/patch-management" element={<EnterprisePage feature="Yama Yönetimi" />} />
-        <Route path="/security-assistant" element={<EnterprisePage feature="AI Güvenlik Asistanı" />} />
-        <Route path="/ai-triage" element={<EnterprisePage feature="AI Zafiyet Değerlendirme" />} />
-        <Route path="/ai-daily-summary" element={<EnterprisePage feature="AI Günlük Özet" />} />
-        <Route path="/ai-command-center" element={<EnterprisePage feature="AI Kontrol Merkezi" />} />
-        <Route path="/notifications" element={<EnterprisePage feature="Bildirim Yönetimi" />} />
+        <Route path="/scantools" element={<EnterprisePage feature="scantools" />} />
+        <Route path="/agents" element={<EnterprisePage feature="agents" />} />
+        <Route path="/users" element={<EnterprisePage feature="users" />} />
+        <Route path="/scans" element={<EnterprisePage feature="scans" />} />
+        <Route path="/asm" element={<EnterprisePage feature="asm" />} />
+        <Route path="/group-management" element={<EnterprisePage feature="groups" />} />
+        <Route path="/team-workflow" element={<EnterprisePage feature="workflow" />} />
+        <Route path="/task-management" element={<EnterprisePage feature="tasks" />} />
+        <Route path="/process-management" element={<EnterprisePage feature="process" />} />
+        <Route path="/integrations" element={<EnterprisePage feature="integrations" />} />
+        <Route path="/patch-management" element={<EnterprisePage feature="patch" />} />
+        <Route path="/security-assistant" element={<EnterprisePage feature="ai_assistant" />} />
+        <Route path="/ai-triage" element={<EnterprisePage feature="ai_triage" />} />
+        <Route path="/ai-daily-summary" element={<EnterprisePage feature="ai_daily" />} />
+        <Route path="/ai-command-center" element={<EnterprisePage feature="ai_control" />} />
+        <Route path="/notifications" element={<EnterprisePage feature="notifications" />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </Layout>
