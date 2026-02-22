@@ -131,56 +131,6 @@ Interactive previews of all Enterprise features with live mockups.
 
 ---
 
-## 🏗 Project Structure
-
-```
-sitey-vm-demo/
-├── backend/            # FastAPI Python backend
-│   ├── app.py          # Main API application
-│   ├── models.py       # SQLAlchemy models
-│   ├── database.py     # Database configuration
-│   └── security.py     # Authentication & security
-├── frontend/           # React frontend
-│   ├── src/
-│   │   ├── pages/      # Page components
-│   │   ├── components/ # Layout & shared components
-│   │   └── i18n/       # Internationalization (TR/EN)
-│   └── build/          # Production build
-├── build_sfx/          # Windows SFX installer builder
-├── SiteyVM_Setup/      # Windows distribution package
-└── .github/workflows/  # CI/CD pipeline
-```
-
----
-
-## 🔧 Development
-
-```bash
-# Backend
-cd backend
-python -m venv venv
-source venv/bin/activate
-pip install -r ../requirements.txt
-uvicorn app:app --host 0.0.0.0 --port 5000
-
-# Frontend
-cd frontend
-npm install
-npm start        # Dev server on :3000
-npm run build    # Production build
-```
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-- ⭐ Star the repo if you find it useful
-- 🐛 Open issues for bugs or feature requests
-- 🔀 Submit pull requests
-
----
-
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
