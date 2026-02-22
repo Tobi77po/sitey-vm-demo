@@ -99,6 +99,32 @@ Open in browser: `http://localhost:5000`
 | **Username** | `admin` |
 | **Password** | `Demo2025!` (change on first login) |
 
+### 🔑 Forgot Password? Reset via Database
+
+If you forget your admin password, you can reset it directly through the SQLite database:
+
+**1. Find the database file:**
+| Installation | Path |
+|---|---|
+| Windows (EXE) | `%LOCALAPPDATA%\SiteyVM\demo.db` |
+| Linux / Dev | `backend/demo.db` |
+
+**2. Open with any SQLite tool** (e.g. [DB Browser for SQLite](https://sqlitebrowser.org/)):
+
+```bash
+sqlite3 demo.db
+```
+
+**3. Reset password to `Demo2025!`:**
+
+```sql
+UPDATE user SET password_hash = '$2b$12$P1z.yGh9PL/fFFmwhEEE..xJA8QuDJDX.fclHFoz1RVahTLo0JNJi' WHERE username = 'admin';
+```
+
+**4. Restart the application** and log in with `admin` / `Demo2025!`
+
+> ⚠️ Change your password immediately after login from the **Profile** page.
+
 ---
 
 ## 📸 Screenshots
@@ -193,6 +219,32 @@ Tarayıcıda açın: `http://localhost:5000`
 |---|---|
 | **Kullanıcı Adı** | `admin` |
 | **Şifre** | `Demo2025!` (ilk girişte değiştirin) |
+
+### 🔑 Şifrenizi mi Unuttunuz? Veritabanından Sıfırlayın
+
+Admin şifrenizi unuttuysanız SQLite veritabanı üzerinden sıfırlayabilirsiniz:
+
+**1. Veritabanı dosyasını bulun:**
+| Kurulum | Yol |
+|---|---|
+| Windows (EXE) | `%LOCALAPPDATA%\SiteyVM\demo.db` |
+| Linux / Geliştirici | `backend/demo.db` |
+
+**2. Herhangi bir SQLite aracıyla açın** (örn. [DB Browser for SQLite](https://sqlitebrowser.org/)):
+
+```bash
+sqlite3 demo.db
+```
+
+**3. Şifreyi `Demo2025!` olarak sıfırlayın:**
+
+```sql
+UPDATE user SET password_hash = '$2b$12$P1z.yGh9PL/fFFmwhEEE..xJA8QuDJDX.fclHFoz1RVahTLo0JNJi' WHERE username = 'admin';
+```
+
+**4. Uygulamayı yeniden başlatın** ve `admin` / `Demo2025!` ile giriş yapın
+
+> ⚠️ Giriş yaptıktan sonra **Profil** sayfasından şifrenizi hemen değiştirin.
 
 ---
 
