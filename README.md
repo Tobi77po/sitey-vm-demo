@@ -97,7 +97,7 @@ Open in browser: `http://localhost:5000`
 | | |
 |---|---|
 | **Username** | `admin` |
-| **Password** | `admin` (change on first login) |
+| **Password** | `Demo2025!` (change on first login) |
 
 ---
 
@@ -242,7 +242,7 @@ Tarayıcıda açın: `http://localhost:5000`
 | | |
 |---|---|
 | **Kullanıcı Adı** | `admin` |
-| **Şifre** | `admin` (ilk girişte değiştirin) |
+| **Şifre** | `Demo2025!` (ilk girişte değiştirin) |
 
 ---
 
