@@ -12,6 +12,11 @@ import importlib
 from pathlib import Path
 from datetime import datetime
 
+if sys.stdout is None:
+    sys.stdout = open(os.devnull, "w")
+if sys.stderr is None:
+    sys.stderr = open(os.devnull, "w")
+
 APP_NAME = "SiteyVM"
 APP_DISPLAY_NAME = "SITEY-VM"
 APP_VERSION = "1.0.0-demo"
@@ -35,18 +40,27 @@ def setup_logging():
     app_dir = get_app_dir()
     log_path = os.path.join(app_dir, LOG_FILENAME)
     handlers = [logging.FileHandler(log_path, encoding="utf-8")]
-    if sys.stdout and hasattr(sys.stdout, "write") and not getattr(sys, "frozen", False):
-        try:
+    try:
+        if sys.stdout and sys.stdout.name != os.devnull:
             sys.stdout.write("")
             handlers.append(logging.StreamHandler(sys.stdout))
-        except Exception:
-            pass
+    except Exception:
+        pass
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s [%(levelname)s] %(message)s",
         handlers=handlers,
     )
     return logging.getLogger(APP_NAME)
+
+
+def _safe_print(msg):
+    """Konsol varsa yazdır, yoksa sessizce geç."""
+    try:
+        if sys.stdout and sys.stdout.name != os.devnull:
+            print(msg)
+    except Exception:
+        pass
 
 
 def get_local_ips():
@@ -160,15 +174,9 @@ def set_autostart(enable=True):
         key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, key_path, 0, winreg.KEY_SET_VALUE)
         if enable:
             base = get_base_dir()
-            pythonw = os.path.join(base, "python", "pythonw.exe")
-            launcher = os.path.join(base, "launcher.py")
-            if os.path.exists(pythonw) and os.path.exists(launcher):
-                winreg.SetValueEx(key, APP_NAME, 0, winreg.REG_SZ,
-                                  '"{}" "{}"'.format(pythonw, launcher))
-            else:
-                bat_path = os.path.join(base, "SiteyVM.bat")
-                if os.path.exists(bat_path):
-                    winreg.SetValueEx(key, APP_NAME, 0, winreg.REG_SZ, '"{}"'.format(bat_path))
+            bat_path = os.path.join(base, "SiteyVM.bat")
+            if os.path.exists(bat_path):
+                winreg.SetValueEx(key, APP_NAME, 0, winreg.REG_SZ, '"{}"'.format(bat_path))
         else:
             try:
                 winreg.DeleteValue(key, APP_NAME)
@@ -479,19 +487,25 @@ def main():
             if needs_deps or first_run:
                 if needs_deps:
                     logger.info("Bagimliliklar eksik - kurulum baslatiliyor")
+                    _safe_print("\n  Bagimliliklar eksik, kuruluyor...\n")
 
                     if not install_dependencies():
                         logger.error("Bagimlilik kurulumu basarisiz!")
+                        _safe_print("\n  [HATA] Bagimliliklar kurulamadi!")
+                        _safe_print("  Internet baglantinizi kontrol edin.\n")
                         return
                     logger.info("Bagimliliklar hazir.")
+                    _safe_print("  Bagimliliklar hazir.\n")
 
                     importlib.invalidate_caches()
 
                 if first_run:
                     logger.info("Ilk calistirma algilandi - Kurulum Sihirbazi baslatiliyor")
+                    _safe_print("\n  Ilk kurulum baslatiliyor...\n")
                     password = run_setup()
                     if password is None:
                         logger.info("Kurulum kullanici tarafindan iptal edildi")
+                        _safe_print("\n  Kurulum iptal edildi.\n")
                         return
                     elif password is True:
                         pass
@@ -529,6 +543,8 @@ def main():
     else:
         logger.error("Sunucu 60 saniye icinde baslatilamadi!")
         logger.error("Log: %s", os.path.join(get_app_dir(), LOG_FILENAME))
+        _safe_print("\n  [HATA] Sunucu baslatilamadi. Log dosyasini kontrol edin.")
+        _safe_print("  Log: {}\n".format(os.path.join(get_app_dir(), LOG_FILENAME)))
         return
 
     url = "http://{}:{}".format(primary_ip, config.port)
