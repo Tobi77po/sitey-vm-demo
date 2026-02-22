@@ -152,7 +152,6 @@ export default function Layout({ children, onLogout }) {
       <div className="content-area">
         <header className="topbar">
           <div className="topbar-left">
-            <div className="topbar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" /></svg>{t.common.demo}</div>
             <div className="topbar-page-info"><h2>{getPageTitle(location.pathname)}</h2></div>
           </div>
           <div className="topbar-right">

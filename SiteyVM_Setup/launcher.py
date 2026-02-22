@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import time
+import signal
 import socket
 import logging
 import threading
@@ -205,58 +206,76 @@ class ServerManager:
         self.logger = logger
         self._server = None
         self._ready = threading.Event()
+        self._should_run = True
+        self._thread = None
 
     def start(self):
-        t = threading.Thread(target=self._run, daemon=True)
-        t.start()
+        self._should_run = True
+        self._thread = threading.Thread(target=self._run_forever, daemon=False, name="SiteyVM-Server")
+        self._thread.start()
 
     def wait_ready(self, timeout=60):
         return self._ready.wait(timeout)
 
-    def _run(self):
-        try:
-            base = get_base_dir()
-            backend_dir = os.path.join(base, "app", "backend")
+    def is_alive(self):
+        return self._thread is not None and self._thread.is_alive()
 
-            if not os.path.isdir(backend_dir):
-                backend_dir = os.path.join(base, "backend")
+    def _run_forever(self):
+        restart_delay = 2
+        max_delay = 60
+        while self._should_run:
+            try:
+                self._run_once()
+            except Exception as e:
+                self.logger.error("Sunucu hatasi: %s", e, exc_info=True)
+            if not self._should_run:
+                break
+            self.logger.warning("Sunucu kapandi, %d saniye sonra yeniden baslatiliyor...", restart_delay)
+            time.sleep(restart_delay)
+            restart_delay = min(restart_delay * 2, max_delay)
+            self._ready.clear()
 
-            site_packages = os.path.join(base, "python", "Lib", "site-packages")
-            if os.path.isdir(site_packages) and site_packages not in sys.path:
-                sys.path.insert(0, site_packages)
+    def _run_once(self):
+        base = get_base_dir()
+        backend_dir = os.path.join(base, "app", "backend")
 
-            if backend_dir not in sys.path:
-                sys.path.insert(0, backend_dir)
+        if not os.path.isdir(backend_dir):
+            backend_dir = os.path.join(base, "backend")
 
-            os.environ["SITEYVM_DATA_DIR"] = get_app_dir()
-            os.chdir(backend_dir)
+        site_packages = os.path.join(base, "python", "Lib", "site-packages")
+        if os.path.isdir(site_packages) and site_packages not in sys.path:
+            sys.path.insert(0, site_packages)
 
-            importlib.invalidate_caches()
-            import uvicorn
-            from app import app as fastapi_app
+        if backend_dir not in sys.path:
+            sys.path.insert(0, backend_dir)
 
-            port = self.config.port
-            self.logger.info("Sunucu baslatiliyor: 0.0.0.0:%d", port)
+        os.environ["SITEYVM_DATA_DIR"] = get_app_dir()
+        os.chdir(backend_dir)
 
-            config = uvicorn.Config(
-                fastapi_app,
-                host="0.0.0.0",
-                port=port,
-                log_level="warning",
-                access_log=False,
-            )
-            self._server = uvicorn.Server(config)
+        importlib.invalidate_caches()
+        import uvicorn
+        from app import app as fastapi_app
 
-            ready_thread = threading.Thread(target=self._check_ready, daemon=True)
-            ready_thread.start()
+        port = self.config.port
+        self.logger.info("Sunucu baslatiliyor: 0.0.0.0:%d", port)
 
-            self._server.run()
-        except Exception as e:
-            self.logger.error("Sunucu baslatma hatasi: %s", e, exc_info=True)
+        config = uvicorn.Config(
+            fastapi_app,
+            host="0.0.0.0",
+            port=port,
+            log_level="warning",
+            access_log=False,
+        )
+        self._server = uvicorn.Server(config)
+
+        ready_thread = threading.Thread(target=self._check_ready, daemon=True)
+        ready_thread.start()
+
+        self._server.run()
 
     def _check_ready(self):
         port = self.config.port
-        for _ in range(60):
+        for _ in range(120):
             try:
                 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 s.settimeout(1)
@@ -268,6 +287,7 @@ class ServerManager:
                 time.sleep(1)
 
     def stop(self):
+        self._should_run = False
         if self._server:
             self._server.should_exit = True
 
@@ -300,6 +320,7 @@ class TrayApp:
         self.server = server
         self.ip_monitor = ip_monitor
         self.icon = None
+        self._user_quit = False
 
     def run(self):
         try:
@@ -310,6 +331,16 @@ class TrayApp:
             self._wait_without_tray()
             return
 
+        while not self._user_quit and self.server.is_alive():
+            try:
+                self._run_tray(pystray, Image)
+            except Exception as e:
+                self.logger.warning("Tray ikonu hatasi: %s - yeniden baslatiliyor", e)
+                time.sleep(3)
+            if not self._user_quit:
+                self.logger.info("Tray ikonu kapandi, sunucu hala calisiyor - tray yeniden baslatiliyor")
+
+    def _run_tray(self, pystray, Image):
         icon_path = os.path.join(get_base_dir(), "icon.ico")
         if not os.path.exists(icon_path):
             icon_path = os.path.join(get_base_dir(), "app", "icon.ico")
@@ -379,6 +410,7 @@ class TrayApp:
         set_autostart(self.config.auto_start)
 
     def _quit(self, *_):
+        self._user_quit = True
         self.server.stop()
         self.ip_monitor.stop()
         if self.icon:
@@ -386,7 +418,7 @@ class TrayApp:
 
     def _wait_without_tray(self):
         try:
-            while True:
+            while self.server.is_alive():
                 time.sleep(1)
         except KeyboardInterrupt:
             self.server.stop()
@@ -399,6 +431,17 @@ def main():
     logger.info("%s Demo v%s baslatiliyor...", APP_DISPLAY_NAME, APP_VERSION)
     logger.info("Kurulum dizini: %s", get_base_dir())
     logger.info("Veri dizini: %s", get_app_dir())
+
+    _shutdown_event = threading.Event()
+
+    def _signal_handler(signum, frame):
+        logger.info("Sinyal alindi (%s), kapatiliyor...", signum)
+        _shutdown_event.set()
+
+    signal.signal(signal.SIGINT, _signal_handler)
+    signal.signal(signal.SIGTERM, _signal_handler)
+    if hasattr(signal, "SIGBREAK"):
+        signal.signal(signal.SIGBREAK, _signal_handler)
 
     try:
         base = get_base_dir()
@@ -517,10 +560,24 @@ def main():
     try:
         tray.run()
     except KeyboardInterrupt:
-        logger.info("Kapatiliyor...")
-        server.stop()
-        ip_monitor.stop()
-        print("\n  {} kapatildi.\n".format(APP_DISPLAY_NAME))
+        pass
+    except Exception as e:
+        logger.warning("Tray hatasi: %s", e)
+
+    if not tray._user_quit and server.is_alive():
+        logger.info("Tray kapandi ama sunucu hala calisiyor, bekleniyor...")
+        try:
+            while server.is_alive():
+                time.sleep(1)
+        except KeyboardInterrupt:
+            pass
+
+    logger.info("Kapatiliyor...")
+    server.stop()
+    ip_monitor.stop()
+    if server._thread and server._thread.is_alive():
+        server._thread.join(timeout=10)
+    print("\n  {} kapatildi.\n".format(APP_DISPLAY_NAME))
 
 
 if __name__ == "__main__":
