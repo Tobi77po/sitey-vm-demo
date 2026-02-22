@@ -1669,7 +1669,7 @@ def vlans(user: User = Depends(get_current_user)):
 
 
 BLOG_FEED_URL = "https://siteyvm.com/blog-feed.json"
-BLOG_CHECK_INTERVAL = 86400
+BLOG_CHECK_INTERVAL = 180
 BLOG_CACHE_FILE = os.path.join(os.path.dirname(__file__), "blog_cache.json")
 
 _blog_cache = {
@@ -1700,7 +1700,7 @@ def _save_blog_cache():
 
 
 def _fetch_blog_feed():
-    """siteyvm.com'dan blog feed'ini çek. Günde 1 kez kontrol eder."""
+    """siteyvm.com'dan blog feed'ini çek. 3 dakikada 1 kez kontrol eder."""
     global _blog_cache
     now = time.time()
 
