@@ -147,11 +147,12 @@ export default function Layout({ children, onLogout }) {
             </div>
           ))}
         </nav>
-        <div className="sidebar-footer"><div className="sidebar-footer-inner"><div className="version">{t.common.demoVersion} v1.0.0</div><div>{t.nav.forEnterprise}</div><a href="https://siteyvm.com" target="_blank" rel="noopener noreferrer">siteyvm.com</a>{" · "}<a href={`mailto:${t.common.email}`}>{t.common.email}</a></div></div>
+        <div className="sidebar-footer"><div className="sidebar-footer-inner"><div className="version">{t.common.demoVersion} v1.3.0</div><div>{t.nav.forEnterprise}</div><a href="https://siteyvm.com" target="_blank" rel="noopener noreferrer">siteyvm.com</a>{" · "}<a href={`mailto:${t.common.email}`}>{t.common.email}</a></div></div>
       </aside>
       <div className="content-area">
         <header className="topbar">
           <div className="topbar-left">
+            <div className="topbar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" /></svg>{t.common.demo}</div>
             <div className="topbar-page-info"><h2>{getPageTitle(location.pathname)}</h2></div>
           </div>
           <div className="topbar-right">

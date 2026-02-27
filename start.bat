@@ -1,7 +1,7 @@
 @echo off
 REM SİTEY-VM Demo - Windows Baslat
 echo =============================================
-echo   SİTEY-VM Demo Surumu v1.0.0
+echo   SİTEY-VM Demo Surumu v1.3.0
 echo   Kurumsal: satis@siteyvm.com ^| siteyvm.com
 echo =============================================
 echo.

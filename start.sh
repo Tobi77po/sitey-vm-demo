@@ -4,7 +4,7 @@ DEMO_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$DEMO_DIR"
 
 echo "============================================="
-echo "  SİTEY-VM Demo Sürümü v1.0.0"
+echo "  SİTEY-VM Demo Sürümü v1.3.0"
 echo "  Kurumsal: satis@siteyvm.com | siteyvm.com"
 echo "============================================="
 echo ""

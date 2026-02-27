@@ -21,7 +21,7 @@ _NO_WINDOW = 0x08000000 if sys.platform == "win32" else 0
 
 APP_NAME = "SiteyVM"
 APP_DISPLAY_NAME = "SITEY-VM"
-APP_VERSION = "1.0.0-demo"
+APP_VERSION = "1.3.0-demo"
 TASK_NAME = "SiteyVM"
 SERVICE_PORT = 5000
 CONFIG_FILENAME = "siteyvm_config.json"

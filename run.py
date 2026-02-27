@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("  SİTEY-VM Demo Sürümü v1.0.0")
+    print("  SİTEY-VM Demo Sürümü v1.3.0")
     print("  Kurumsal sürüm: satis@siteyvm.com | siteyvm.com")
     print("=" * 60)
     print()

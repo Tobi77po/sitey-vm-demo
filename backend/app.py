@@ -820,7 +820,7 @@ def generate_pdf_report(
 
     elements.append(Spacer(1, 24))
     elements.append(HRFlowable(width="100%", thickness=0.5, color=rl_colors.HexColor("#e2e8f0"), spaceBefore=10, spaceAfter=8))
-    elements.append(Paragraph("Bu rapor SİTEY-VM Demo Sürümü v1.0.0 ile oluşturulmuştur.", s_footer))
+    elements.append(Paragraph("Bu rapor SİTEY-VM Demo Sürümü v1.3.0 ile oluşturulmuştur.", s_footer))
     elements.append(Paragraph("Kurumsal lisans ile tam özellikli raporlama, AI analiz ve daha fazlasına erişin.", s_footer))
     elements.append(Paragraph(f"© 2025 SİTEY Siber Güvenlik  |  siteyvm.com  |  Rapor Tarihi: {now_str}", s_footer))
 
@@ -876,7 +876,7 @@ def generate_excel_report(
 
     info_rows = [
         ("Ürün", "SİTEY-VM Kurumsal Zafiyet Yönetim Platformu"),
-        ("Sürüm", "Demo Sürümü v1.0.0"),
+        ("Sürüm", "Demo Sürümü v1.3.0"),
         ("Oluşturan", user.username),
         ("Tarih", datetime.now().strftime("%d.%m.%Y %H:%M")),
         ("Toplam Zafiyet", str(len(vulns))),
@@ -1713,7 +1713,7 @@ def _fetch_blog_feed():
 
         req = urllib.request.Request(
             BLOG_FEED_URL,
-            headers={"User-Agent": "SITEY-VM Demo/1.0"}
+            headers={"User-Agent": "SITEY-VM Demo/1.3"}
         )
         if _blog_cache.get("etag"):
             req.add_header("If-None-Match", _blog_cache["etag"])
@@ -1801,6 +1801,7 @@ def get_blog_notifications(user=Depends(get_current_user)):
             "category": post.get("category", "Blog"),
             "image": post.get("image"),
         })
+    notifications.sort(key=lambda n: n.get("date", ""), reverse=True)
     return {"notifications": notifications}
 
 
@@ -1820,6 +1821,7 @@ def notifications(user=Depends(get_current_user)):
             "category": post.get("category", "Blog"),
             "image": post.get("image"),
         })
+    result.sort(key=lambda n: n.get("date", ""), reverse=True)
     return result
 
 @app.get("/api/enterprise/{path:path}")

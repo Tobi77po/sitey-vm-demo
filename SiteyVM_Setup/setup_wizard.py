@@ -96,6 +96,7 @@ def install_dependencies():
         "fastapi", "uvicorn[standard]", "sqlalchemy", "pydantic",
         "python-jose[cryptography]", "passlib[bcrypt]",
         "python-multipart", "aiofiles", "httpx",
+        "reportlab", "openpyxl",
         "pystray", "Pillow",
     ]
 
