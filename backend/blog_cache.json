@@ -1,33 +1,483 @@
 {
   "posts": [
     {
-      "id": "welcome-sitey-vm",
-      "title": "SİTEY-VM Zafiyet Yönetim Platformu",
-      "summary": "Türkiye'nin en gelişmiş zafiyet yönetim sistemi ile tanışın. 16+ güvenlik aracını tek platformda birleştiren modern çözüm.",
+      "id": "sitey-vm-tanitim",
+      "title": "SİTEY-VM: Türkiye'nin En Gelişmiş Zafiyet Yönetim Platformu",
+      "summary": "16+ güvenlik aracını tek platformda birleştiren SİTEY-VM ile tanışın. Nessus, OpenVAS, Burp Suite, Acunetix ve daha fazlası tek çatı altında.",
       "url": "https://siteyvm.com",
       "date": "2025-12-01T00:00:00Z",
       "category": "Duyuru",
-      "image": null
+      "image": "https://siteyvm.com/images/logo.png"
     },
     {
-      "id": "enterprise-features-2026",
-      "title": "Kurumsal Sürüm Yeni Özellikleri",
-      "summary": "AI Güvenlik Asistanı, Gelişmiş Raporlama, Agent Yönetimi ve daha fazlası kurumsal sürümde. Detaylar için web sitemizi ziyaret edin.",
+      "id": "kurumsal-surum-2026",
+      "title": "Kurumsal Sürüm 2026 Yeni Özellikleri",
+      "summary": "AI Güvenlik Asistanı, Gelişmiş Raporlama, Agent Yönetimi, Atak Yüzeyi Haritalama ve daha fazlası kurumsal sürümde. Detaylar için web sitemizi ziyaret edin.",
       "url": "https://siteyvm.com/#features",
       "date": "2026-01-15T00:00:00Z",
       "category": "Ürün",
       "image": null
     },
     {
-      "id": "pentest-services",
-      "title": "Sızma Testi ve Güvenlik Hizmetlerimiz",
-      "summary": "Red Team, Blue Team, Purple Team, Pentest, DDoS Testi, Sosyal Mühendislik ve daha fazlası. Profesyonel güvenlik hizmetleri için bizimle iletişime geçin.",
+      "id": "pentest-hizmetleri",
+      "title": "Sızma Testi ve Siber Güvenlik Hizmetlerimiz",
+      "summary": "Red Team, Blue Team, Purple Team, Pentest, DDoS Testi, Sosyal Mühendislik, Bulut Güvenliği ve daha fazlası. Profesyonel güvenlik hizmetleri için bizimle iletişime geçin.",
       "url": "https://siteyvm.com/services.html",
       "date": "2026-02-01T00:00:00Z",
       "category": "Hizmetler",
       "image": null
+    },
+    {
+      "id": "blog-zy-baslangic",
+      "title": "Zafiyet Yönetimine Başlangıç",
+      "summary": "Zafiyet yönetiminde keşif, doğrulama, önceliklendirme ve yeniden test adımlarını ürün yaklaşımıyla anlatan pratik rehber.",
+      "url": "https://siteyvm.com/blog-zy-baslangic.html",
+      "date": "2025-06-01T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-zy-surekli",
+      "title": "Sürekli Zafiyet Yönetimi: Tarama • Doğrulama • Retest",
+      "summary": "Sürekli zafiyet yönetimi döngüsü: tarama, tekilleştirme ile doğrulama, risk tabanlı öncelik ve otomatik retest.",
+      "url": "https://siteyvm.com/blog-zy-surekli.html",
+      "date": "2025-06-10T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-ag-zafiyet-tarama",
+      "title": "Ağ Zafiyet Tarama Rehberi: İç ve Dış Ağ",
+      "summary": "İç ve dış ağ zafiyet tarama süreçleri, kimlik doğrulamalı ve kimlik doğrulamasız tarama farkları, ağ segmentasyonunun etkileri ve tarama sıklığı rehberi.",
+      "url": "https://siteyvm.com/blog-ag-zafiyet-tarama.html",
+      "date": "2025-06-20T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-cve-oncelik",
+      "title": "CVE Önceliklendirme: CVSS vs EPSS",
+      "summary": "CVSS ve EPSS'i birlikte kullanarak CVE'leri risk tabanlı önceliklendirme; varlık kritiklikleri ve exploit mevcudiyeti ile aksiyon alma rehberi.",
+      "url": "https://siteyvm.com/blog-cve-oncelik.html",
+      "date": "2025-06-30T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-risk-tabanli-zy",
+      "title": "Risk Tabanlı Zafiyet Yönetimi (RBVM): Doğru Öncelik",
+      "summary": "Risk tabanlı zafiyet yönetimi (RBVM) ile güvenlik açıklarını iş bağlamında önceliklendirin. CVSS yetersizlikleri, EPSS, varlık kritikliği ve tehdit istihbaratı rehberi.",
+      "url": "https://siteyvm.com/blog-risk-tabanli-zy.html",
+      "date": "2025-07-05T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-false-positive",
+      "title": "False Positive Yönetimi: Gürültüyü Azaltma Stratejileri",
+      "summary": "Zafiyet taramalarında false positive oranını azaltın. Doğrulama yöntemleri, korelasyon, bağlam analizi, beyaz liste yönetimi ve AI tabanlı otonom doğrulama rehberi.",
+      "url": "https://siteyvm.com/blog-false-positive.html",
+      "date": "2025-07-10T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-varlik-envanteri",
+      "title": "Varlık Envanteri ve ZY: Bilmiyorsan Yönetemezsin",
+      "summary": "Varlık envanteri ile zafiyet yönetimi: entegrasyon yöntemleri, kritiklik sınıflandırma (crown-jewel) ve otomasyon.",
+      "url": "https://siteyvm.com/blog-varlik-envanteri.html",
+      "date": "2025-07-15T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-patch-yonetimi",
+      "title": "Yama Yönetimi Stratejileri: Zafiyet Kapatma Süreçleri",
+      "summary": "Etkili yama yönetimi stratejileri ile güvenlik açıklarını hızla kapatın. Önceliklendirme, test, rollback planı, otomatik dağıtım ve uyum takibi rehberi.",
+      "url": "https://siteyvm.com/blog-patch-yonetimi.html",
+      "date": "2025-07-20T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-istisna-yonetimi",
+      "title": "İstisna Yönetimi ve Geçici Risk Kabulü",
+      "summary": "Zafiyet yönetiminde istisna onayı, süre/koşul takibi, kompansatuar kontroller ve denetim izleri.",
+      "url": "https://siteyvm.com/blog-istisna-yonetimi.html",
+      "date": "2025-07-25T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-tarayici-karsilastirma",
+      "title": "Zafiyet Tarayıcıları Karşılaştırma: Doğru Araç Seçimi",
+      "summary": "Zafiyet tarayıcılarını kapsamlı karşılaştırın: Nessus, Qualys, OpenVAS, Nuclei, Acunetix ve Burp Suite. Ücretli vs açık kaynak, entegrasyon ve doğru araç seçim rehberi.",
+      "url": "https://siteyvm.com/blog-tarayici-karsilastirma.html",
+      "date": "2025-07-30T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-zy-arac-secimi",
+      "title": "Zafiyet Yönetimi Araç Seçimi: Kritik Değerlendirme Rehberi",
+      "summary": "Zafiyet yönetimi aracı nasıl seçilir? RFP hazırlama, POC süreci, ölçeklenebilirlik, TCO analizi, vendor lock-in ve SİTEY avantajları rehberi.",
+      "url": "https://siteyvm.com/blog-zy-arac-secimi.html",
+      "date": "2025-08-05T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-zy-olgunluk",
+      "title": "Zafiyet Yönetimi Olgunluk Modeli: Kurumsal Seviye Değerlendirme Rehberi",
+      "summary": "Zafiyet yönetimi olgunluk modelini 5 seviyede keşfedin: İlkel'den Optimize'ye kurumsal güvenlik olgunluğunuzu değerlendirin ve yükseltin.",
+      "url": "https://siteyvm.com/blog-zy-olgunluk.html",
+      "date": "2025-08-10T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-zy-ekip-rolleri",
+      "title": "Zafiyet Yönetimi Ekip Yapılanması ve Roller",
+      "summary": "Zafiyet yönetimi ekibinin kimlerden oluşması gerektiğini, CISO'dan güvenlik analistine kadar tüm rolleri, RACI matrisini ve beceri geliştirme planlarını öğrenin.",
+      "url": "https://siteyvm.com/blog-zy-ekip-rolleri.html",
+      "date": "2025-08-15T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-zy-kpi-raporlama",
+      "title": "ZY KPI ve Raporlama: MTTR, SLA ve Kapanış Doğruluğu",
+      "summary": "Zafiyet yönetimi metrikleri: MTTR, SLA uyumu, retest başarısı ve gürültü azaltma ölçümleri; yönetim paneli ipuçları.",
+      "url": "https://siteyvm.com/blog-zy-kpi-raporlama.html",
+      "date": "2025-08-20T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-zy-sla-politika",
+      "title": "ZY SLA ve Politika Oluşturma Rehberi",
+      "summary": "Zafiyet yönetiminde SLA süreleri nasıl belirlenir? Kritik, yüksek, orta ve düşük seviye zafiyetler için politika yazımı, yönetim onayı ve eskalasyon süreçleri rehberi.",
+      "url": "https://siteyvm.com/blog-zy-sla-politika.html",
+      "date": "2025-08-25T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-zy-otomasyon",
+      "title": "Zafiyet Yönetiminde Otomasyon: Verimlilik ve Hız",
+      "summary": "Zafiyet yönetimi süreçlerinde otomasyon ile verimliliği artırın. Otomatik tarama, bulgu tekilleştirme, ticket otomasyonu, SOAR entegrasyonu ve API tabanlı otomasyon rehberi.",
+      "url": "https://siteyvm.com/blog-zy-otomasyon.html",
+      "date": "2025-08-30T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-zy-entegrasyon",
+      "title": "ZY Araç Entegrasyonu: ITSM, SIEM ve SOAR",
+      "summary": "Zafiyet yönetimi araç entegrasyonu rehberi: ITSM (Jira, ServiceNow) ticket otomasyonu, SIEM korelasyonu, SOAR playbook entegrasyonu ve API gateway yapılandırması.",
+      "url": "https://siteyvm.com/blog-zy-entegrasyon.html",
+      "date": "2025-09-05T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-zy-yonetici-rapor",
+      "title": "Yöneticiler İçin ZY Raporlama: C-Level Dashboard",
+      "summary": "Üst yönetim ve C-Level için zafiyet yönetimi raporlama rehberi: Risk skoru trendleri, SLA uyum metrikleri, benchmark karşılaştırmaları ve yönetici dashboard tasarımı.",
+      "url": "https://siteyvm.com/blog-zy-yonetici-rapor.html",
+      "date": "2025-09-10T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-zy-cloud-native",
+      "title": "Cloud-Native Zafiyet Yönetimi: Konteyner ve Serverless",
+      "summary": "Cloud-native ortamlarda zafiyet yönetimi: container image tarama, Kubernetes güvenlik politikaları, serverless riskleri, IaC güvenliği ve CSPM çözümleri.",
+      "url": "https://siteyvm.com/blog-zy-cloud-native.html",
+      "date": "2025-09-15T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-zy-saglik-sektoru",
+      "title": "Sağlık Sektöründe Zafiyet Yönetimi",
+      "summary": "Sağlık sektörü siber risk profili, tıbbi cihaz zafiyetleri, IoMT güvenliği, hastane ağ segmentasyonu ve yama uygulanamayan cihaz stratejileri.",
+      "url": "https://siteyvm.com/blog-zy-saglik-sektoru.html",
+      "date": "2025-09-20T00:00:00Z",
+      "category": "Zafiyet Yönetimi",
+      "image": null
+    },
+    {
+      "id": "blog-ad-pentest",
+      "title": "Active Directory Sızma Testi: Kapsamlı Güvenlik Değerlendirme Rehberi",
+      "summary": "AD sızma testi metodolojisi, Kerberos saldırıları, yetki yükseltme teknikleri ve AD güvenlik sertleştirme önerileri. Kapsamlı AD pentest rehberi.",
+      "url": "https://siteyvm.com/blog-ad-pentest.html",
+      "date": "2025-09-25T00:00:00Z",
+      "category": "Pentest",
+      "image": null
+    },
+    {
+      "id": "blog-api-pentest",
+      "title": "API Sızma Testi: Kimlikli Akışlar ve İş Mantığı",
+      "summary": "OpenAPI/Swagger keşfi, token/claim analizi, rate limit, IDOR ve iş mantığı açıkları için pratik rehber.",
+      "url": "https://siteyvm.com/blog-api-pentest.html",
+      "date": "2025-09-30T00:00:00Z",
+      "category": "Pentest",
+      "image": null
+    },
+    {
+      "id": "blog-ic-ag-pentest",
+      "title": "İç Ağ Sızma Testi: Yanal Hareket ve Yetki Yükseltme",
+      "summary": "İç ağ sızma testinde keşif, kimlik zafiyetleri, yanal hareket (lateral movement) ve yetki yükseltme taktikleri.",
+      "url": "https://siteyvm.com/blog-ic-ag-pentest.html",
+      "date": "2025-10-05T00:00:00Z",
+      "category": "Pentest",
+      "image": null
+    },
+    {
+      "id": "blog-mobil-pentest",
+      "title": "Mobil Uygulama Sızma Testi: Yerel Depolama ve Trafik",
+      "summary": "Mobil sızma testinde statik ve dinamik analiz; SSL pinning, yerel depolama ve veri sızıntılarına odaklı rehber.",
+      "url": "https://siteyvm.com/blog-mobil-pentest.html",
+      "date": "2025-10-10T00:00:00Z",
+      "category": "Pentest",
+      "image": null
+    },
+    {
+      "id": "blog-wireless-pentest",
+      "title": "Kablosuz Ağ Sızma Testi: WiFi Güvenlik Değerlendirme Rehberi",
+      "summary": "Kablosuz ağ sızma testi rehberi: WiFi protokolleri, WPA2/WPA3 saldırı teknikleri, Evil Twin, 802.1X güvenliği ve kablosuz zafiyet yönetimi.",
+      "url": "https://siteyvm.com/blog-wireless-pentest.html",
+      "date": "2025-10-15T00:00:00Z",
+      "category": "Pentest",
+      "image": null
+    },
+    {
+      "id": "blog-web-owasp-checklist",
+      "title": "Web Uygulaması Sızma Testi Checklist (OWASP)",
+      "summary": "OWASP odaklı web uygulaması sızma testi checklist: Kimlik, oturum, girdi doğrulama, iş mantığı ve dosya yükleme kontrolleri.",
+      "url": "https://siteyvm.com/blog-web-owasp-checklist.html",
+      "date": "2025-10-20T00:00:00Z",
+      "category": "Pentest",
+      "image": null
+    },
+    {
+      "id": "blog-pentest-kapsam",
+      "title": "Sızma Testi için Kapsam Belirleme",
+      "summary": "Sızma testi projelerinde hedeflerin doğru tanımı, kısıtlar ve başarı kriterleri için pratik bir checklist.",
+      "url": "https://siteyvm.com/blog-pentest-kapsam.html",
+      "date": "2025-10-25T00:00:00Z",
+      "category": "Pentest",
+      "image": null
+    },
+    {
+      "id": "blog-pentest-modelleri",
+      "title": "Black/Grey/White-Box Sızma Testi Nasıl Seçilir?",
+      "summary": "Black, Grey ve White-Box sızma testi yaklaşımlarını hedef, süre, risk ve olgunluğa göre nasıl seçmelisiniz?",
+      "url": "https://siteyvm.com/blog-pentest-modelleri.html",
+      "date": "2025-10-30T00:00:00Z",
+      "category": "Pentest",
+      "image": null
+    },
+    {
+      "id": "blog-pentest-rapor",
+      "title": "Sızma Testi Raporu Nasıl Yazılır? Kapsamlı ve Profesyonel Raporlama Rehberi",
+      "summary": "Sızma testi raporunu profesyonelce yazmanın yolları: rapor yapısı, yönetici özeti, teknik bulgu formatı, CVSS, PoC ve düzeltme önerileri rehberi.",
+      "url": "https://siteyvm.com/blog-pentest-rapor.html",
+      "date": "2025-11-05T00:00:00Z",
+      "category": "Pentest",
+      "image": null
+    },
+    {
+      "id": "blog-privilege-escalation",
+      "title": "Yetki Yükseltme Teknikleri: Sızma Testlerinde Privilege Escalation Rehberi",
+      "summary": "Yetki yükseltme (privilege escalation) teknikleri rehberi: Linux ve Windows privesc yöntemleri, AD ortamında yetki yükseltme, konteyner escape, tespit ve savunma stratejileri.",
+      "url": "https://siteyvm.com/blog-privilege-escalation.html",
+      "date": "2025-11-10T00:00:00Z",
+      "category": "Pentest",
+      "image": null
+    },
+    {
+      "id": "blog-asm-temel",
+      "title": "Attack Surface Management Temelleri",
+      "summary": "ASM ile dışa açık varlıkların keşfi, haritalanması ve erken risk tespiti için ipuçları ve ürünle birlikte çalışma yöntemleri.",
+      "url": "https://siteyvm.com/blog-asm-temel.html",
+      "date": "2025-11-15T00:00:00Z",
+      "category": "Güvenlik",
+      "image": null
+    },
+    {
+      "id": "blog-exploit-analiz",
+      "title": "Exploit Analizi ve Zafiyet İstismar Yolları",
+      "summary": "Exploit analizi nedir, exploitation lifecycle nasıl işler? Exploit-DB, Metasploit, EPSS skorlama ve zafiyet doğrulamada exploit kullanımını keşfedin.",
+      "url": "https://siteyvm.com/blog-exploit-analiz.html",
+      "date": "2025-11-18T00:00:00Z",
+      "category": "Güvenlik",
+      "image": null
+    },
+    {
+      "id": "blog-zero-day",
+      "title": "Zero-Day Açıkları: Tespit, Müdahale ve Proaktif Korunma Rehberi",
+      "summary": "Zero-day açıkları nedir, nasıl tespit edilir? Sıfır gün zafiyetlerine karşı proaktif korunma stratejileri, virtual patching ve threat intelligence rehberi.",
+      "url": "https://siteyvm.com/blog-zero-day.html",
+      "date": "2025-11-22T00:00:00Z",
+      "category": "Güvenlik",
+      "image": null
+    },
+    {
+      "id": "blog-ransomware-korunma",
+      "title": "Ransomware Saldırıları: Kapsamlı Korunma ve Müdahale Rehberi",
+      "summary": "Ransomware saldırılarına karşı kapsamlı korunma rehberi. Fidye yazılımı türleri, önleme stratejileri, olay müdahalesi ve zafiyet yönetimi ile proaktif koruma.",
+      "url": "https://siteyvm.com/blog-ransomware-korunma.html",
+      "date": "2025-11-25T00:00:00Z",
+      "category": "Güvenlik",
+      "image": null
+    },
+    {
+      "id": "blog-incident-response",
+      "title": "Siber Güvenlik Olay Müdahalesi: Hazırlık, Tespit ve Kurtarma",
+      "summary": "Siber güvenlik olay müdahalesi rehberi: NIST SP 800-61 yaşam döngüsü, CSIRT ekip yapısı, tespit-analiz-kurtarma süreçleri ve zafiyet yönetimi ile IR entegrasyonu.",
+      "url": "https://siteyvm.com/blog-incident-response.html",
+      "date": "2025-11-28T00:00:00Z",
+      "category": "Güvenlik",
+      "image": null
+    },
+    {
+      "id": "blog-red-team-blue-team",
+      "title": "Red Team vs Blue Team: Ofansif ve Defansif Siber Güvenlik Rehberi",
+      "summary": "Red Team vs Blue Team karşılaştırması: ofansif ve defansif siber güvenlik operasyonları, Purple Team yaklaşımı, MITRE ATT&CK eşleştirmesi ve zafiyet yönetimi entegrasyonu.",
+      "url": "https://siteyvm.com/blog-red-team-blue-team.html",
+      "date": "2025-12-05T00:00:00Z",
+      "category": "Güvenlik",
+      "image": null
+    },
+    {
+      "id": "blog-threat-intelligence",
+      "title": "Siber Tehdit İstihbaratı: Stratejik, Taktik ve Operasyonel TI Rehberi",
+      "summary": "Siber tehdit istihbaratı (CTI) rehberi. Stratejik, taktik, operasyonel TI türleri, IOC/TTP kavramları, MITRE ATT&CK ve zafiyet yönetimi entegrasyonu.",
+      "url": "https://siteyvm.com/blog-threat-intelligence.html",
+      "date": "2025-12-10T00:00:00Z",
+      "category": "Güvenlik",
+      "image": null
+    },
+    {
+      "id": "blog-siem-korelasyon",
+      "title": "SIEM ve Zafiyet Yönetimi Entegrasyonu: Korelasyon, Önceliklendirme ve Otomasyon",
+      "summary": "SIEM ve zafiyet yönetimi entegrasyonu rehberi: korelasyon kuralları, alarm önceliklendirme, SOAR otomasyonu, SOC operasyonları, tehdit istihbaratı ve platform entegrasyonu.",
+      "url": "https://siteyvm.com/blog-siem-korelasyon.html",
+      "date": "2025-12-15T00:00:00Z",
+      "category": "Güvenlik",
+      "image": null
+    },
+    {
+      "id": "blog-bug-bounty",
+      "title": "Bug Bounty Programları: Kurumsal Planlama, Yönetim ve En İyi Uygulamalar",
+      "summary": "Bug bounty programları kurumsal kılavuzu: program planlama, kapsam belirleme, ödül politikası, platform seçimi, triage süreci, VDP ve zafiyet yönetimi entegrasyonu.",
+      "url": "https://siteyvm.com/blog-bug-bounty.html",
+      "date": "2025-12-20T00:00:00Z",
+      "category": "Güvenlik",
+      "image": null
+    },
+    {
+      "id": "blog-phishing-simulasyon",
+      "title": "Phishing Simülasyonu: Güvenlik Farkındalığı ve Sosyal Mühendislik Testleri",
+      "summary": "Phishing simülasyonu ile çalışan güvenlik farkındalığını artırın. Sosyal mühendislik test senaryoları, e-posta güvenliği kontrolleri (SPF, DKIM, DMARC) ve zafiyet yönetimi entegrasyonu.",
+      "url": "https://siteyvm.com/blog-phishing-simulasyon.html",
+      "date": "2025-12-25T00:00:00Z",
+      "category": "Güvenlik",
+      "image": null
+    },
+    {
+      "id": "blog-sosyal-muhendislik",
+      "title": "Sosyal Mühendislik Saldırıları: Kapsamlı Teknik Analiz ve Korunma Rehberi",
+      "summary": "Sosyal mühendislik saldırıları rehberi: phishing, pretexting, baiting, deepfake destekli saldırılar, psikolojik prensipler, kurumsal savunma stratejileri ve farkındalık eğitim programları.",
+      "url": "https://siteyvm.com/blog-sosyal-muhendislik.html",
+      "date": "2025-12-28T00:00:00Z",
+      "category": "Güvenlik",
+      "image": null
+    },
+    {
+      "id": "blog-scada-ot",
+      "title": "SCADA/OT Güvenliği: Endüstriyel Kontrol Sistemleri Zafiyet Yönetimi Rehberi",
+      "summary": "SCADA ve OT güvenliği rehberi: endüstriyel kontrol sistemleri zafiyet yönetimi, Purdue modeli, IEC 62443 uyumluluk, OT sızma testi ve IT-OT yakınsaması stratejileri.",
+      "url": "https://siteyvm.com/blog-scada-ot.html",
+      "date": "2026-01-05T00:00:00Z",
+      "category": "Güvenlik",
+      "image": null
+    },
+    {
+      "id": "blog-devsecops-pipeline",
+      "title": "DevSecOps: CI/CD Pipeline'ında Güvenlik Entegrasyonu",
+      "summary": "DevSecOps yaklaşımıyla CI/CD pipeline'ınıza SAST, DAST, SCA ve container güvenliği entegre edin. Adım adım rehber ve zafiyet yönetimi stratejileri.",
+      "url": "https://siteyvm.com/blog-devsecops-pipeline.html",
+      "date": "2026-01-10T00:00:00Z",
+      "category": "DevSecOps",
+      "image": null
+    },
+    {
+      "id": "blog-dast-sast",
+      "title": "DAST ve SAST Birlikte Nasıl Kullanılır?",
+      "summary": "SAST (statik) ve DAST (dinamik) testlerin birlikte kullanımıyla daha yüksek kapsam ve daha az yanlış pozitif elde etme rehberi.",
+      "url": "https://siteyvm.com/blog-dast-sast.html",
+      "date": "2026-01-18T00:00:00Z",
+      "category": "DevSecOps",
+      "image": null
+    },
+    {
+      "id": "blog-container-guvenlik",
+      "title": "Container ve Kubernetes Güvenliği: Kapsamlı Test ve Zafiyet Yönetimi Rehberi",
+      "summary": "Container ve Kubernetes güvenlik testleri rehberi. Docker imaj güvenliği, RBAC, Pod Security, supply chain güvenliği ve zafiyet yönetimi stratejileri.",
+      "url": "https://siteyvm.com/blog-container-guvenlik.html",
+      "date": "2026-01-22T00:00:00Z",
+      "category": "DevSecOps",
+      "image": null
+    },
+    {
+      "id": "blog-bulut-guvenlik",
+      "title": "Bulut Güvenliği: AWS, Azure ve GCP'de Zafiyet Yönetimi",
+      "summary": "AWS, Azure ve GCP bulut ortamlarında zafiyet yönetimi rehberi. Paylaşılan sorumluluk modeli, IAM güvenliği, misconfiguration riskleri ve multi-cloud stratejileri.",
+      "url": "https://siteyvm.com/blog-bulut-guvenlik.html",
+      "date": "2026-01-28T00:00:00Z",
+      "category": "Bulut Güvenliği",
+      "image": null
+    },
+    {
+      "id": "blog-iso27001-zy",
+      "title": "ISO 27001 ve Zafiyet Yönetimi: Standart Uyumlu Güvenlik Süreçleri",
+      "summary": "ISO 27001 ve zafiyet yönetimi entegrasyonu rehberi. BGYS uyumu, Annex A kontrolleri, risk değerlendirme, PUKÖ döngüsü ve denetim hazırlığı adımları.",
+      "url": "https://siteyvm.com/blog-iso27001-zy.html",
+      "date": "2026-02-01T00:00:00Z",
+      "category": "Uyumluluk",
+      "image": null
+    },
+    {
+      "id": "blog-kvkk-siber",
+      "title": "KVKK ve Siber Güvenlik: Kapsamlı Veri Koruma Uyum Rehberi",
+      "summary": "KVKK ve siber güvenlik uyumu rehberi. Teknik ve idari tedbirler, veri ihlali bildirimi, zafiyet yönetimi ile KVKK uyumlu güvenlik stratejileri.",
+      "url": "https://siteyvm.com/blog-kvkk-siber.html",
+      "date": "2026-02-05T00:00:00Z",
+      "category": "Uyumluluk",
+      "image": null
+    },
+    {
+      "id": "blog-nist-framework",
+      "title": "NIST Cybersecurity Framework: Zafiyet Yönetimi Odaklı Uyum Rehberi",
+      "summary": "NIST CSF 2.0 güncellemeleri, Govern fonksiyonu, Implementation Tiers, Framework Profiles, zafiyet yönetimi eşleştirmesi, ISO 27001 karşılaştırması ve KOBİ uygulama stratejileri.",
+      "url": "https://siteyvm.com/blog-nist-framework.html",
+      "date": "2026-02-10T00:00:00Z",
+      "category": "Uyumluluk",
+      "image": null
+    },
+    {
+      "id": "blog-zy-compliance-mapping",
+      "title": "Zafiyet ve Uyum Eşleştirme: Regülasyon Haritalama",
+      "summary": "Zafiyet yönetimini KVKK, ISO 27001, PCI DSS, NIST CSF ve SOX gereksinimleriyle eşleştirin. Otomasyon ile uyum kanıtı üretme rehberi.",
+      "url": "https://siteyvm.com/blog-zy-compliance-mapping.html",
+      "date": "2026-02-15T00:00:00Z",
+      "category": "Uyumluluk",
+      "image": null
     }
   ],
-  "last_check": 1771668958.5437183,
-  "etag": null
+  "last_check": 1772227526.1802185,
+  "etag": "\"e982a68c7d0879d8fdc8dda24eb21001\""
 }

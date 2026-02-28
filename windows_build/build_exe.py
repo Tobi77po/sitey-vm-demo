@@ -263,7 +263,7 @@ NOT
 -----
   Veriler %LOCALAPPDATA%/SiteyVM/ altinda saklanir
 
-  (c) 2025 SITEY Bilisim - www.siteyvm.com
+  (c) 2025-2026 SITEY Bilisim - www.siteyvm.com
 """
     readme_path = DIST_DIR / APP_NAME / "KULLANIM.txt"
     with open(readme_path, "w", encoding="utf-8") as f:

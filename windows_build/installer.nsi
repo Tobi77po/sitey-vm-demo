@@ -8,7 +8,7 @@
 
 !define APP_NAME "SITEY-VM"
 !define APP_NAME_ASCII "SiteyVM"
-!define APP_VERSION "1.0.0"
+!define APP_VERSION "1.4.0"
 !define APP_PUBLISHER "SITEY Bilisim"
 !define APP_URL "https://www.siteyvm.com"
 !define APP_EXE "SiteyVM.exe"

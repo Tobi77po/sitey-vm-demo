@@ -13,7 +13,7 @@ from datetime import datetime
 
 APP_NAME = "SiteyVM"
 APP_DISPLAY_NAME = "SITEY-VM"
-APP_VERSION = "1.0.0-demo"
+APP_VERSION = "1.4.0-demo"
 SERVICE_PORT = 5000
 CONFIG_FILENAME = "siteyvm_config.json"
 LOG_FILENAME = "siteyvm.log"

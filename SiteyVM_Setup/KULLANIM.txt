@@ -1,12 +1,12 @@
 
 ═══════════════════════════════════════════════════════════════
-  SİTEY-VM Demo v1.0.0
+  SİTEY-VM Demo v1.4.0
   Kurumsal Zafiyet Yönetim Platformu
 ═══════════════════════════════════════════════════════════════
 
 HIZLI BAŞLANGIÇ
 ─────────────────
-  1. SiteyVM_Setup_v1.0.0.exe dosyasına çift tıklayın
+  1. SiteyVM_Setup_v1.4.0.exe dosyasına çift tıklayın
   2. "Devam" diyerek kurulumu onaylayın
   3. İlk açılışta admin şifrenizi belirleyin (GUI penceresi)
   4. Bağımlılıklar otomatik kurulur (internet gerekli)
@@ -14,7 +14,7 @@ HIZLI BAŞLANGIÇ
 
 TEK DOSYA — HER ŞEY İÇİNDE
 ─────────────────────────────
-  SiteyVM_Setup_v1.0.0.exe tek bir dosyadır ve içinde:
+  SiteyVM_Setup_v1.4.0.exe tek bir dosyadır ve içinde:
   • Python 3.11.7 Embedded (taşınabilir)
   • FastAPI backend sunucusu
   • React web arayüzü
@@ -35,7 +35,7 @@ ERİŞİM BİLGİLERİ
 
 KURULUM SONRASI ÇALIŞTIRMA
 ────────────────────────────
-  İlk kurulumdan sonra SiteyVM_Setup_v1.0.0.exe'ye
+  İlk kurulumdan sonra SiteyVM_Setup_v1.4.0.exe'ye
   tekrar çift tıkladığınızda doğrudan başlar.
   (Tekrar kurulum yapmaz, mevcut kurulumu kullanır)
 

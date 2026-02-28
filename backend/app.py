@@ -93,7 +93,7 @@ _is_production = os.environ.get("SITEYVM_PRODUCTION", "").lower() in ("1", "true
 
 app = FastAPI(
     title="SİTEY-VM Demo",
-    version="1.0.0-demo",
+    version="1.4.0-demo",
     docs_url=None if _is_production else "/docs",
     redoc_url=None if _is_production else "/redoc",
     openapi_url=None if _is_production else "/openapi.json",
@@ -287,7 +287,7 @@ def system_info():
     ip_list = sorted(ips)
     primary = next((ip for ip in ip_list if ip.startswith(("192.168.", "10."))), ip_list[0])
     return {
-        "version": "1.0.0-demo",
+        "version": "1.4.0-demo",
         "hostname": _socket.gethostname(),
         "primary_ip": primary,
         "all_ips": ip_list,
@@ -468,19 +468,31 @@ def _register_turkish_fonts():
         return
     from reportlab.pdfbase import pdfmetrics
     from reportlab.pdfbase.ttfonts import TTFont
+    from reportlab.pdfbase.pdfmetrics import registerFontFamily
+    import sys
+
+    # --- reportlab paketinin kendi içindeki DejaVu fontlarını da ara ---
+    _rl_font_dir = None
+    try:
+        import reportlab
+        _rl_font_dir = _os.path.join(_os.path.dirname(reportlab.__file__), "fonts")
+    except Exception:
+        pass
 
     _font_dirs = [
         _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "fonts"),
         "/usr/share/fonts/truetype/dejavu",
-        _os.path.join(_os.environ.get("WINDIR", "C:\\Windows"), "Fonts"),
     ]
+    # reportlab'ın kendi font dizinini ekle
+    if _rl_font_dir:
+        _font_dirs.append(_rl_font_dir)
+    # Windows Fonts dizini
+    _font_dirs.append(
+        _os.path.join(_os.environ.get("WINDIR", "C:\\Windows"), "Fonts")
+    )
+
+    # ---- 1) Önce DejaVu fontlarını ara ----
     _dejavu = _dejavu_b = _dejavu_o = _dejavu_bo = None
-    _font_map = {
-        "DejaVuSans.ttf": "_dejavu",
-        "DejaVuSans-Bold.ttf": "_dejavu_b",
-        "DejaVuSans-Oblique.ttf": "_dejavu_o",
-        "DejaVuSans-BoldOblique.ttf": "_dejavu_bo",
-    }
     for _fd in _font_dirs:
         _candidate = _os.path.join(_fd, "DejaVuSans.ttf")
         if _os.path.exists(_candidate):
@@ -494,14 +506,85 @@ def _register_turkish_fonts():
         pdfmetrics.registerFont(TTFont("DejaVu", _dejavu))
         if _os.path.exists(_dejavu_b):
             pdfmetrics.registerFont(TTFont("DejaVu-Bold", _dejavu_b))
+        else:
+            pdfmetrics.registerFont(TTFont("DejaVu-Bold", _dejavu))
         if _os.path.exists(_dejavu_o):
             pdfmetrics.registerFont(TTFont("DejaVu-Italic", _dejavu_o))
+        else:
+            pdfmetrics.registerFont(TTFont("DejaVu-Italic", _dejavu))
         if _os.path.exists(_dejavu_bo):
             pdfmetrics.registerFont(TTFont("DejaVu-BoldItalic", _dejavu_bo))
-        from reportlab.pdfbase.pdfmetrics import registerFontFamily
+        else:
+            pdfmetrics.registerFont(TTFont("DejaVu-BoldItalic", _dejavu))
         registerFontFamily("DejaVu", normal="DejaVu", bold="DejaVu-Bold",
                            italic="DejaVu-Italic", boldItalic="DejaVu-BoldItalic")
         _FONT_REGISTERED = True
+        return
+
+    # ---- 2) DejaVu bulunamadı — Windows yerleşik fontlarını dene ----
+    if sys.platform == "win32":
+        _win_fonts_dir = _os.path.join(
+            _os.environ.get("WINDIR", "C:\\Windows"), "Fonts"
+        )
+        # Tercih sırası: Segoe UI > Arial > Tahoma > Verdana > Calibri
+        _win_font_sets = [
+            {
+                "name": "SegoeUI",
+                "normal": "segoeui.ttf",
+                "bold": "segoeuib.ttf",
+                "italic": "segoeuii.ttf",
+                "bolditalic": "segoeuiz.ttf",
+            },
+            {
+                "name": "Arial",
+                "normal": "arial.ttf",
+                "bold": "arialbd.ttf",
+                "italic": "ariali.ttf",
+                "bolditalic": "arialbi.ttf",
+            },
+            {
+                "name": "Tahoma",
+                "normal": "tahoma.ttf",
+                "bold": "tahomabd.ttf",
+                "italic": "tahoma.ttf",
+                "bolditalic": "tahomabd.ttf",
+            },
+            {
+                "name": "Verdana",
+                "normal": "verdana.ttf",
+                "bold": "verdanab.ttf",
+                "italic": "verdanai.ttf",
+                "bolditalic": "verdanaz.ttf",
+            },
+            {
+                "name": "Calibri",
+                "normal": "calibri.ttf",
+                "bold": "calibrib.ttf",
+                "italic": "calibrii.ttf",
+                "bolditalic": "calibriz.ttf",
+            },
+        ]
+        for fset in _win_font_sets:
+            _normal = _os.path.join(_win_fonts_dir, fset["normal"])
+            if not _os.path.exists(_normal):
+                continue
+            _bold = _os.path.join(_win_fonts_dir, fset["bold"])
+            _italic = _os.path.join(_win_fonts_dir, fset["italic"])
+            _bolditalic = _os.path.join(_win_fonts_dir, fset["bolditalic"])
+            try:
+                pdfmetrics.registerFont(TTFont("DejaVu", _normal))
+                pdfmetrics.registerFont(TTFont("DejaVu-Bold",
+                    _bold if _os.path.exists(_bold) else _normal))
+                pdfmetrics.registerFont(TTFont("DejaVu-Italic",
+                    _italic if _os.path.exists(_italic) else _normal))
+                pdfmetrics.registerFont(TTFont("DejaVu-BoldItalic",
+                    _bolditalic if _os.path.exists(_bolditalic) else _normal))
+                registerFontFamily("DejaVu", normal="DejaVu", bold="DejaVu-Bold",
+                                   italic="DejaVu-Italic", boldItalic="DejaVu-BoldItalic")
+                _FONT_REGISTERED = True
+                return
+            except Exception:
+                continue
 
 @app.post("/api/vuln/report/pdf")
 def generate_pdf_report(
@@ -820,9 +903,9 @@ def generate_pdf_report(
 
     elements.append(Spacer(1, 24))
     elements.append(HRFlowable(width="100%", thickness=0.5, color=rl_colors.HexColor("#e2e8f0"), spaceBefore=10, spaceAfter=8))
-    elements.append(Paragraph("Bu rapor SİTEY-VM Demo Sürümü v1.3.0 ile oluşturulmuştur.", s_footer))
+    elements.append(Paragraph("Bu rapor SİTEY-VM Demo Sürümü v1.4.0 ile oluşturulmuştur.", s_footer))
     elements.append(Paragraph("Kurumsal lisans ile tam özellikli raporlama, AI analiz ve daha fazlasına erişin.", s_footer))
-    elements.append(Paragraph(f"© 2025 SİTEY Siber Güvenlik  |  siteyvm.com  |  Rapor Tarihi: {now_str}", s_footer))
+    elements.append(Paragraph(f"© 2025-2026 SİTEY Siber Güvenlik  |  siteyvm.com  |  Rapor Tarihi: {now_str}", s_footer))
 
     doc.build(elements)
     buf.seek(0)
@@ -876,7 +959,7 @@ def generate_excel_report(
 
     info_rows = [
         ("Ürün", "SİTEY-VM Kurumsal Zafiyet Yönetim Platformu"),
-        ("Sürüm", "Demo Sürümü v1.3.0"),
+        ("Sürüm", "Demo Sürümü v1.4.0"),
         ("Oluşturan", user.username),
         ("Tarih", datetime.now().strftime("%d.%m.%Y %H:%M")),
         ("Toplam Zafiyet", str(len(vulns))),

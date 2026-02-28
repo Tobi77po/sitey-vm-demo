@@ -5,7 +5,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 SETUP_DIR="$(dirname "$SCRIPT_DIR")/SiteyVM_Setup"
 BUILD_DIR="$SCRIPT_DIR"
 OUTPUT_DIR="$(dirname "$SCRIPT_DIR")"
-VERSION="1.0.0"
+VERSION="1.4.0"
 
 SFX_C="$BUILD_DIR/siteyvm_sfx.c"
 STUB_EXE="$BUILD_DIR/siteyvm_stub.exe"
